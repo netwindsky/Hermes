@@ -1,0 +1,28 @@
+{
+    "jobs": [
+        {
+            "name": "daily_job_16_00",
+            "trigger_type": "cron",
+            "trigger_args": {
+                "hour": 16,
+                "minute": 0
+            }
+        },
+        {
+            "name": "every_5_minutes",
+            "trigger_type": "interval",
+            "trigger_args": {
+                "minutes": 5
+            }
+        },
+        {
+            "name": "weekly_monday",
+            "trigger_type": "cron",
+            "trigger_args": {
+                "day_of_week": "mon",
+                "hour": 9,
+                "minute": 0
+            }
+        }
+    ]
+}

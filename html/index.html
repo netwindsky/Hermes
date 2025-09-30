@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hermes Job Configuration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+        .form-group button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Hermes Job Configuration</h1>
+        <form id="job-config-form">
+            <div class="form-group">
+                <label for="name">Job Name:</label>
+                <input type="text" id="name" name="name" value="ahhhhfs_job" required>
+            </div>
+            <div class="form-group">
+                <label for="url">URL:</label>
+                <input type="text" id="url" name="url" value="https://www.ahhhhfs.com/" required>
+            </div>
+            <div class="form-group">
+                <label for="param">Parameters:</label>
+                <input type="text" id="param" name="param" value="page: 1">
+            </div>
+            <div class="form-group">
+                <label for="method">Method:</label>
+                <select id="method" name="method">
+                    <option value="requests" selected>Requests</option>
+                    <option value="selenium">Selenium</option>
+                    <option value="playwright">Playwright</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="allow-domains">Allowed Domains:</label>
+                <input type="text" id="allow-domains" name="allow_domains" value="www.ahhhhfs.com">
+            </div>
+            <div class="form-group">
+                <label for="bloomfilter-capacity">Bloom Filter Capacity:</label>
+                <input type="number" id="bloomfilter-capacity" name="bloomfilter_capacity" value="10000" required>
+            </div>
+            <div class="form-group">
+                <label for="bloomfilter-error-rate">Bloom Filter Error Rate:</label>
+                <input type="number" id="bloomfilter-error-rate" name="bloomfilter_error_rate" value="0.001" step="0.001" required>
+            </div>
+            <div class="form-group">
+                <label for="selector">Selector:</label>
+                <input type="text" id="selector" name="selector" value=".posts-warp article" required>
+            </div>
+            <div class="form-group">
+                <label for="filters">Filters:</label>
+                <input type="text" id="filters" name="filters" value="">
+            </div>
+            <div class="form-group">
+                <label for="attr">Attributes:</label>
+                <textarea id="attr" name="attr" required>{
+  "title": ".entry-title a",
+  "discript": "div.entry-desc",
+  "gz": "span.meta-views"
+}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="link">Link:</label>
+                <textarea id="link" name="link" required>[
+  {
+    "selector": ".entry-title a",
+    "filters": [
+      "div.jp-relatedposts",
+      "div.entry-copyright",
+      "div.lwptoc"
+    ],
+    "attr": {
+      "content": "article.post-content"
+    }
+  }
+]</textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Save Configuration</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('job-config-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Configuration saved!');
+            // 在这里可以添加将表单数据发送到服务器的代码
+        });
+    </script>
+</body>
+</html>

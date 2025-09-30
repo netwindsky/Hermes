@@ -1,0 +1,42 @@
+{
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    },
+    "storage": {
+        "type": "file",
+        "path": "data"
+    },
+    "request": {
+        "verify": false,
+        "timeout": 30,
+        "retries": 3
+    },
+    "jobs": [
+        {
+            "name": "xinfadi_job",
+            "type": "crawl",
+            "method": "requests",
+            "url": "http://www.xinfadi.com.cn/marketanalysis/0/list/1.shtml",
+            "bloomfilter": {
+                "capacity": 10000,
+                "error_rate": 0.001
+            },
+            "template": {
+                "selector": {
+                    "css": ".hq_table tbody tr"
+                },
+                "attr": {
+                    "name": {
+                        "css": "td:nth-child(1)",
+                        "value": "@text"
+                    },
+                    "price": {
+                        "css": "td:nth-child(6)",
+                        "value": "@text"
+                    }
+                }
+            },
+            "trigger_name": "every_5_seconds"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "taobao": "cookie_string_for_taobao",
+    "jd": "cookie_string_for_jd",
+    "weibo": "cookie_string_for_weibo",
+    "zhihu": "cookie_string_for_zhihu",
+    "bilibili": "cookie_string_for_bilibili"
+}
