@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  hermes:
+    build: .
+    container_name: hermes-crawler
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config:/app/config
+      - ./data:/app/data
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      - hermes-network
+
+networks:
+  hermes-network:
+    driver: bridge
