@@ -1,0 +1,10 @@
+requests
+apscheduler
+beautifulsoup4
+selenium
+playwright
+fastapi
+uvicorn
+pydantic
+pymongo
+jsonpath-ng
